@@ -1,0 +1,1613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LLMandSCRAP</class>
+ <widget class="QMainWindow" name="LLMandSCRAP">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1277</width>
+    <height>679</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QStackedWidget{
+background-color: white;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="_header_frame">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>65</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame#_header_frame
+{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 0px;
+	background-color: qlineargradient(spread:repeat, cx1:1, cy1:1, x2:1, y2:1, stop:0 #9BA6AF,stop:1 #697782);
+
+/*
+     background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                 stop:0 white, stop: 0.4 gray, stop:1 green)
+
+     background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                 stop:0 white, stop: 0.4 rgba(10, 20, 30, 40),
+                 stop:1 rgb(0, 200, 230, 200))
+
+     background: qconicalgradient(cx:0.5, cy:0.5, angle:30,
+                 stop:0 white, stop:1 #00FF00)
+
+     background: qradialgradient(cx:0, cy:0, radius: 1,
+                 fx:0.5, fy:0.5, stop:0 white, stop:1 green)
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>5</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>5</number>
+       </property>
+       <property name="bottomMargin">
+        <number>5</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="header_left_layout" stretch="0">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="_subtitle_label">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe Print</family>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;Textscrapping and LLM&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="header_right_layout">
+         <item>
+          <widget class="QFrame" name="navigationheader_frame">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	background-color: qlineargradient(spread:pad, x1: 0, y1: 0, x2: 1, y2: 1, stop:0 #f7f7f7, stop:1 #f6f6f6);
+	font-size: 16px;
+	color: #646363;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+QPushButton::hover {
+	background-color: qlineargradient(spread:pad, x1: 0, y1: 0, x2: 0, y2: 1, stop:0 #ebebeb, stop:1 #e5e5e5);
+	border-color: #ecf3f7;
+}
+
+QPushButton::selected {
+	background-color: #2b6c7e;
+}
+
+QPushButton::disabled {
+	background-color: #BDBDBD;
+	color: #757575;
+	border-color: #9E9E9E;
+}
+
+QPushButton::pressed {
+	background-color: qlineargradient(spread:pad, x1: 0, y1: 0, x2: 1, y2: 1, stop:0 #2b9c8b, stop:1 #3ad3bc);
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <property name="spacing">
+             <number>3</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="nav_button_1">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>44</height>
+               </size>
+              </property>
+              <property name="sizeIncrement">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>nav_button_1</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="nav_button_2">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>44</height>
+               </size>
+              </property>
+              <property name="sizeIncrement">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>nav_button_2</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="nav_button_3">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>44</height>
+               </size>
+              </property>
+              <property name="sizeIncrement">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>nav_button_3</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="page_1">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QWidget" name="entry_widget" native="true">
+          <property name="styleSheet">
+           <string notr="true">#entry_widget{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(46, 46, 46, 55), stop:0.55 rgba(71, 98, 126, 35), stop:0.9375 rgba(85, 102, 113, 38), stop:1 rgba(0, 0, 0, 0));
+}</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="12" column="0" colspan="8">
+            <widget class="QWidget" name="widget" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QTableWidget" name="tableWidget_1">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::ExtendedSelection</enum>
+                </property>
+                <column>
+                 <property name="text">
+                  <string>Formel</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Beschreibung</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tableWidget_2">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::ExtendedSelection</enum>
+                </property>
+                <column>
+                 <property name="text">
+                  <string>Formel</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Beschreibung</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tableWidget_3">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::ExtendedSelection</enum>
+                </property>
+                <column>
+                 <property name="text">
+                  <string>Formel</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Beschreibung</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QComboBox" name="combo_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* QComboBox Styles */
+QComboBox {
+color: #2b2d42;
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+  border: 1px solid #6272a4;
+border-radius: 5px;
+padding: 5px;
+padding-left: 10px;
+}
+
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 20px;
+border-left-width: 1px;
+border-left-color: #191919;
+border-left-style: solid;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+background-color: #6272a4;
+}
+
+QComboBox::down-arrow {
+image: url(://arrow-down.png);
+}
+
+QComboBox,
+QAbstractItemView {
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+color: #2b2d42;
+selection-background-color: #6272a4;
+selection-color: #f8f8f2;
+  border: 1px solid #6272a4;
+}
+</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="6" column="4">
+            <widget class="QComboBox" name="combo_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* QComboBox Styles */
+QComboBox {
+color: #2b2d42;
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+  border: 1px solid #6272a4;
+border-radius: 5px;
+padding: 5px;
+padding-left: 10px;
+}
+
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 20px;
+border-left-width: 1px;
+border-left-color: #191919;
+border-left-style: solid;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+background-color: #6272a4;
+}
+
+QComboBox::down-arrow {
+image: url(://arrow-down.png);
+}
+
+QComboBox,
+QAbstractItemView {
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+color: #2b2d42;
+selection-background-color: #6272a4;
+selection-color: #f8f8f2;
+  border: 1px solid #6272a4;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="3">
+            <widget class="QLabel" name="edit_label_3">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #ffffff;</string>
+             </property>
+             <property name="text">
+              <string>....</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="edit_label_1">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #ffffff;</string>
+             </property>
+             <property name="text">
+              <string>DATA SCRAP !!</string>
+             </property>
+            </widget>
+           </item>
+           <item row="18" column="0">
+            <widget class="QLabel" name="data_selected">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #000000;
+background-color: #d9deee;
+
+font-weight: bold;
+border-radius: 5px;
+padding: 5px;
+
+</string>
+             </property>
+             <property name="text">
+              <string>REAAADDYYY!!!</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="3">
+            <widget class="QLabel" name="edit_label_6">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #ffffff;</string>
+             </property>
+             <property name="text">
+              <string>....</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLabel" name="edit_label_2">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #ffffff;</string>
+             </property>
+             <property name="text">
+              <string>Tabelle</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLineEdit" name="edit_2">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* QLineEdit Styles */
+QLineEdit {
+font-weight: bold;
+color: #2b2d42;
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+border: 1px solid #6272a4;
+border-radius: 5px;
+padding: 5px;
+important!
+}
+
+QLineEdit:focus {
+border: 1px solid #81a1c1;
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+}</string>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="4">
+            <widget class="QLineEdit" name="edit_3">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* QLineEdit Styles */
+QLineEdit {
+font-weight: bold;
+color: #2b2d42;
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+border: 1px solid #6272a4;
+border-radius: 5px;
+padding: 5px;
+important!
+}
+
+QLineEdit:focus {
+border: 1px solid #81a1c1;
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+}</string>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QPushButton" name="casual_button_1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>40</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+QPushButton{
+ border-radius: 10px;
+ background-color: #FFFFFF;
+ border: 3px;
+ border-style: outset;
+ border-color: #b5c3d0;
+margin: 2px;
+}
+QPushButton:pressed {
+    background-color: #d8d8d8;
+    border-style: inset;
+}
+
+QPushButton:hover {
+    background-color: #e6e6e6;
+    border-style: solid;
+}
+
+QPushButton:hover:pressed {
+    background-color: #d8d8d8;
+    border-style: inset;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>Datei öffnen</string>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>28</width>
+               <height>28</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="0" colspan="8">
+            <widget class="QWidget" name="widget_2" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
+              </size>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Tabelle 1</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Tabelle 2</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Tabelle 3</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="18" column="7">
+            <widget class="QLabel" name="list_created">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #000000;
+background-color: #d9deee;
+
+border-radius: 5px;
+padding: 5px;
+font-weight: bold;</string>
+             </property>
+             <property name="text">
+              <string>DOOONEEEE!!!</string>
+             </property>
+            </widget>
+           </item>
+           <item row="18" column="1" colspan="6">
+            <widget class="QProgressBar" name="progress_bar">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QProgressBar {
+    background-color: #e1e1e1;
+    border: none;
+    height: 10px;
+    border-radius: 5px;
+}
+QProgressBar::chunk {
+    background-color: #C5E6AC;
+    border-radius: 5px;
+}</string>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+             <property name="format">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="combo_1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* QComboBox Styles */
+QComboBox {
+color: #2b2d42;
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+  border: 1px solid #6272a4;
+border-radius: 5px;
+padding: 5px;
+padding-left: 10px;
+}
+
+QComboBox::drop-down {
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 20px;
+border-left-width: 1px;
+border-left-color: #191919;
+border-left-style: solid;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+background-color: #6272a4;
+}
+
+QComboBox::down-arrow {
+image: url(://arrow-down.png);
+}
+
+QComboBox,
+QAbstractItemView {
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+color: #2b2d42;
+selection-background-color: #6272a4;
+selection-color: #f8f8f2;
+  border: 1px solid #6272a4;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="edit_label_4">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #ffffff;</string>
+             </property>
+             <property name="text">
+              <string>TEXT FILE:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="edit_1">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* QLineEdit Styles */
+QLineEdit {
+font-weight: bold;
+color: #2b2d42;
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+border: 1px solid #6272a4;
+border-radius: 5px;
+padding: 5px;
+important!
+}
+
+QLineEdit:focus {
+border: 1px solid #81a1c1;
+background-color: qlineargradient(
+spread: pad,
+x1: 1,
+y1: 0,
+x2: 1,
+y2: 1,
+stop: 0 #d9deee,
+stop: 1 #c2c7d5
+);
+}</string>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="edit_label_5">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #ffffff;</string>
+             </property>
+             <property name="text">
+              <string>WEBSITE:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="7">
+            <widget class="QPushButton" name="casual_button_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+QPushButton{
+ border-radius: 10px;
+ background-color: #FFFFFF;
+ border: 3px;
+ border-style: outset;
+ border-color: #b5c3d0;
+margin: 2px;
+}
+QPushButton:pressed {
+    background-color: #d8d8d8;
+    border-style: inset;
+}
+
+QPushButton:hover {
+    background-color: #e6e6e6;
+    border-style: solid;
+}
+
+QPushButton:hover:pressed {
+    background-color: #d8d8d8;
+    border-style: inset;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>Speichern</string>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>28</width>
+               <height>28</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="5">
+            <widget class="QPushButton" name="green_button">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #50d236, stop: 1 #6ab718);
+color: white;
+border: 3px solid #50d236;
+padding: 5px 15px;
+font: bold 14px;
+transition: all 0.2s;
+text-transform: uppercase;
+letter-spacing: 1px;
+border-radius: 5px;
+box-shadow: 0px 5px 0px #B71C1C;
+ border-radius: 10px;
+
+ border-style: outset;
+}
+
+QPushButton:hover {
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #adee82, stop: 1 #50d236);
+box-shadow: 0px 2px 0px #50d236;
+transform: translateY(-2px);
+}
+
+QPushButton:pressed {
+background-color: #50d236;
+box-shadow: none;
+transform: translateY(0px);
+}
+
+QPushButton:disabled {
+background-color: #BDBDBD;
+color: #757575;
+border-color: #9E9E9E;
+box-shadow: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>START</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>:/edit/ico/bleistift_1.ico</normaloff>:/edit/ico/bleistift_1.ico</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>28</width>
+               <height>28</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="6">
+            <widget class="QPushButton" name="casual_button_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+QPushButton{
+ border-radius: 10px;
+ background-color: #FFFFFF;
+ border: 3px;
+ border-style: outset;
+ border-color: #b5c3d0;
+margin: 2px;
+}
+QPushButton:pressed {
+    background-color: #d8d8d8;
+    border-style: inset;
+}
+
+QPushButton:hover {
+    background-color: #e6e6e6;
+    border-style: solid;
+}
+
+QPushButton:hover:pressed {
+    background-color: #d8d8d8;
+    border-style: inset;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>Vergleichen</string>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>28</width>
+               <height>28</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QPushButton" name="red_button">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #F44336, stop: 1 #B71C1C);
+color: white;
+border: 3px solid #B71C1C;
+padding: 5px 15px;
+font: bold 14px;
+transition: all 0.2s;
+text-transform: uppercase;
+letter-spacing: 1px;
+border-radius: 5px;
+box-shadow: 0px 5px 0px #B71C1C;
+ border-radius: 10px;
+
+ border-style: outset;
+}
+
+QPushButton:hover {
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 rgb(255, 131, 131), stop: 1 #ce2020);
+box-shadow: 0px 2px 0px #B71C1C;
+transform: translateY(-2px);
+}
+
+QPushButton:pressed {
+background-color: #B71C1C;
+box-shadow: none;
+transform: translateY(0px);
+}
+
+QPushButton:disabled {
+background-color: #BDBDBD;
+color: #757575;
+border-color: #9E9E9E;
+box-shadow: none;
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../ressources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
